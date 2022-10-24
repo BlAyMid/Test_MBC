@@ -1,0 +1,15 @@
+1-question: done
+2-question: done
+3-question: done
+4-question: done
+5-question: done
+6-question: done
+7-question: done
+8-question: done
+9-question: done
+10-question: not done //в интернете конечно есть руководства на данные три задания, но я не стал их делать тк не работал с 1C-Битрикс (при необходимости изучу)
+11-question: not done
+12-question: not done
+13-question: done
+14-question: done
+15-question: done

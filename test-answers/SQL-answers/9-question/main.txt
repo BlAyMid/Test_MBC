@@ -1,0 +1,42 @@
+
+//a
+//Решение при помощи апи битрикса.
+
+$res = CIBlockElement::GetProperty("IBLOCK_ID", "ELEMENT_ID", array("sort" => "asc"), Array());
+while ($ob = $res->GetNext()) {
+    $array[]=$ob;
+}
+
+
+//a
+//Получение всех полей и свойств по ID элемента битрикс АПИ
+
+
+$arSelect = Array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM",);
+$arFilter = Array("IBLOCK_ID"=>3, "SECTION_ID" =>2, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
+$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
+
+while($ob = $res->GetNextElement()){
+	$arFields = $ob->GetFields();
+        print_r($arFields);
+        $arProps = $ob->GetProperties();
+        print_r($arProps);
+}
+
+
+
+//a
+//Вариант через sql запрос
+//
+
+select value from property_value where id='product_id'
+
+
+
+//b
+//перенёс строки для удобного чтения, честно сам бы не написал такой запрос, нашёл ответ на это задание на stack overflow.
+//Разобрался конечно, но удивился тк сам с более сложными запросами не игрался.
+
+select category.name, property.name from category join product on category.id =
+product.category_id join property_value on product.id = property_value.product_id join property on property_value.property_id =
+property.id group by category.id, property_value.property_id having count(product.id) = 1

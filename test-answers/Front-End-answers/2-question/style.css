@@ -1,0 +1,45 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 15px;
+    display: inline-block;
+    list-style-type: none;
+    line-height:50px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    background-color: #282828;
+}
+
+li:hover {
+    background-color: #706969;
+}
+
+ul {
+    text-align: justify;
+}
+
+ul:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+}
+
+ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+ul li a {
+    color: #FEFDFD;
+    text-decoration:none;
+}
